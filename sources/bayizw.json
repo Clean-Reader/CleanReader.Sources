@@ -1,0 +1,97 @@
+{
+  "Id": "bayizw",
+  "Name": "八一中文网",
+  "WebUrl": "https://www.81zw.com/",
+  "Charset": "utf-8",
+  "IsBookDetailEnabled": false,
+  "IsExploreEnabled": false,
+  "Search": {
+    "SearchUrl": "https://www.81zw.com/search.php?q=",
+    "NeedDetail": false,
+    "DataType": "HTML",
+    "Range": "div[class='result-list'] div.result-item",
+    "Repair": [
+      {
+        "Field": 1,
+        "Position": "l",
+        "Value": "https://www.81zw.com"
+      }
+    ],
+    "Replace": [],
+    "BookName": {
+      "Type": "text",
+      "Rule": "h3.result-item-title a span",
+      "Filter": ""
+    },
+    "BookUrl": {
+      "Type": "href",
+      "Rule": "h3.result-item-title a",
+      "Filter": ""
+    },
+    "BookAuthor": {
+      "Type": "text",
+      "Rule": "div.result-game-item-info p span:nth-child(2)",
+      "Filter": ""
+    },
+    "LastChapterTitle": {
+      "Type": "text",
+      "Rule": "div.result-game-item-info p:nth-last-child(1) a",
+      "Filter": ""
+    },
+    "LastChapterUrl": {
+      "Type": "href",
+      "Rule": "div.result-game-item-info p:nth-last-child(1) a",
+      "Filter": ""
+    },
+    "UpdateTime": {
+      "Type": "text",
+      "Rule": "dd[class='book_other']:nth-last-child(2) span:nth-last-child(1)",
+      "Filter": ""
+    },
+    "Category": {
+      "Type": "text",
+      "Rule": "div.result-game-item-info p:nth-child(2) span:nth-child(2)",
+      "Filter": ""
+    },
+    "BookDescription": {
+      "Type": "text",
+      "Rule": "p.result-game-item-desc",
+      "Filter": ""
+    },
+    "BookCover": {
+      "Type": "src",
+      "Rule": "div.result-game-item-pic a img",
+      "Filter": ""
+    }
+  },
+  "Chapter": {
+    "Range": "div[id='list'] dd",
+    "Repair": [
+      {
+        "Field": 1,
+        "Position": "l",
+        "Value": "https://www.81zw.com"
+      }
+    ],
+    "Replace": [],
+    "IsChildFiltered": false,
+    "Title": {
+      "Type": "text",
+      "Rule": "a",
+      "Filter": ""
+    },
+    "Url": {
+      "Type": "href",
+      "Rule": "a",
+      "Filter": ""
+    }
+  },
+  "ChapterContent": {
+    "Range": "div[class='box_con']",
+    "Content": {
+      "Type": "text",
+      "Rule": "div[id='content']",
+      "Filter": ""
+    }
+  }
+}

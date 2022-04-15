@@ -1,0 +1,83 @@
+{
+  "Id": "qidian",
+  "Name": "起点中文网",
+  "WebUrl": "https://www.qidian.com",
+  "Charset": "utf-8",
+  "IsBookDetailEnabled": false,
+  "IsExploreEnabled": true,
+  "Explore": {
+    "Categories": [
+      {
+        "Name": "月票榜",
+        "Url": "/rank/yuepiao/page{{page}}/"
+      },
+      {
+        "Name": "热销榜",
+        "Url": "/rank/hotsales/page{{page}}/"
+      },
+      {
+        "Name": "阅读指数榜",
+        "Url": "/rank/readindex/page{{page}}/"
+      },
+      {
+        "Name": "推荐榜",
+        "Url": "/rank/recom/page{{page}}/"
+      },
+      {
+        "Name": "收藏榜",
+        "Url": "/rank/collect/page{{page}}/"
+      }
+    ],
+    "NeedDetail": false,
+    "Range": "div[id='book-img-text'] ul li",
+    "Repair": [
+      {
+        "Field": 1,
+        "Position": "l",
+        "Value": "https:"
+      },
+      {
+        "Field": 2,
+        "Position": "l",
+        "Value": "https:"
+      }
+    ],
+    "BookName": {
+      "Type": "text",
+      "Rule": "div.book-mid-info h2 a"
+    },
+    "BookUrl": {
+      "Type": "href",
+      "Rule": "div.book-mid-info h2 a"
+    },
+    "BookAuthor": {
+      "Type": "text",
+      "Rule": "p.author a"
+    },
+    "LastChapterTitle": {
+      "Type": "text",
+      "Rule": "p.update a",
+      "Filter": "最新更新 "
+    },
+    "Category": {
+      "Type": "text",
+      "Rule": "p.author a:nth-child(2)"
+    },
+    "BookCover": {
+      "Type": "src",
+      "Rule": "div.book-img-box a img"
+    },
+    "BookDescription": {
+      "Type": "text",
+      "Rule": "p.intro"
+    },
+    "BookStatus": {
+      "Type": "text",
+      "Rule": "p.author span"
+    },
+    "UpdateTime": {
+      "Type": "text",
+      "Rule": "p.update span"
+    }
+  }
+}
